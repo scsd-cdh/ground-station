@@ -31,10 +31,10 @@
 import { Section } from './types/types';
 import UINavbar from './components/Navbar/UINavbar.vue';
 const sections: Section[] = [
-  { name: 'Home', link: '/' },
-  { name: 'Commands', link: '/commands' },
-  { name: 'Log', link: 'communication' },
-  { name: 'Settings', link: 'settings' },
+  { name: 'Home', link: '/', icon: 'src/assets/MenuIcons/home.svg' },
+  { name: 'Reference Sheet', link: '/ref-sheet', icon: 'src/assets/MenuIcons/ref-sheet.svg' },
+  { name: 'Command', link: '/communications', icon: 'src/assets/MenuIcons/command.svg' },
+  { name: 'Settings', link: '/settings', icon: 'src/assets/MenuIcons/settings.svg' }
 ];
 </script>
 

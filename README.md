@@ -27,3 +27,7 @@ You can learn more about Take Over mode [here](https://github.com/johnsoncodehk/
 - add table-like layout for list of command (reference sheet) name / encode pairs
 - make 'comands' component that would have a dropdown of commands and a display
   of whether the command is received or not by the satellite
+
+## References
+
+- [icons](https://fonts.google.com/icons?icon.size=24&icon.color=%23e8eaed)

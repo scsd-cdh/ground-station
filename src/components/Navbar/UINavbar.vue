@@ -6,7 +6,8 @@
     <div class="navbar-menu">
       <router-link v-for="section in sections" :key="section.name" :to="section.link" class="navbar-item"
         active-class="active">
-        {{ section.name }}
+        <img :src="`./../../${section.icon}`" alt="" class="navbar-icon" :title="`${section.name}`" />
+        <span class="navbar-text">{{ section.name }}</span>
       </router-link>
     </div>
   </nav>
@@ -31,12 +32,17 @@ const { sections } = props;
 <style scoped>
 .navbar {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
-  padding: 1rem;
+  /* Center items horizontally */
+  padding: 0rem;
   background-color: #333;
   color: #fff;
-  border-radius: 1rem;
+  width: 5rem;
+  /* Initial width of the vertical navbar */
+  position: fixed;
+  height: 100%;
 }
 
 .navbar-brand .navbar-item {
@@ -44,30 +50,51 @@ const { sections } = props;
   font-weight: bold;
   color: #fff;
   text-decoration: none;
-  margin: 1rem 1rem 1rem 1rem;
-  border-radius: 1rem;
+  margin-bottom: 1rem;
 }
 
 .navbar-menu {
   display: flex;
-  gap: 1rem;
+  flex-direction: column;
+  gap: 0rem;
+  width: 100%;
 }
 
 .navbar-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   color: #fff;
   text-decoration: none;
   font-size: 1rem;
-  transition: color 0.3s, background-color 0.3s;
+  transition: color 0.3s, background-color 0.3s, width 0.3s;
+  overflow: hidden;
+  width: 100%;
+  padding: 0.5rem 0;
 }
 
-.navbar-item:hover {
-  background-color: #444;
-  color: #ddd;
+.navbar-icon {
+  width: 50%;
+  margin-bottom: 0.5rem;
 }
 
-.navbar-item.active {
-  background-color: #555;
-  color: #fff;
-  font-weight: bold;
+.navbar-text {
+  display: none;
+  /* Hide text by default */
+}
+
+.navbar-menu {
+  .navbar-item:hover {
+    background-color: #444;
+    color: #ddd;
+    /* Expand width on hover */
+  }
+
+  .navbar-item.active {
+    background-color: #555;
+    color: #fff;
+    font-weight: bold;
+  }
 }
 </style>

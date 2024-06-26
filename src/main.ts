@@ -10,7 +10,7 @@ import './index.css'
 
 const routes = [
   { path: '/', component: HomePage },
-  { path: '/commands', component: Commands },
+  { path: '/ref-sheet', component: Commands },
   { path: '/communications', component: Log },
   { path: '/settings', component: Settings },
 ];
