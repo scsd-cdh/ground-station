@@ -75,7 +75,7 @@ const { sections } = props;
 }
 
 .navbar-icon {
-  width: 50%;
+  width: 40%;
   margin-bottom: 0.5rem;
 }
 

@@ -1,31 +1,15 @@
 <template>
   <div>
-    <h1 class="page-title">Run Commands</h1>
-    <div class="center-container">
-      <CommandRun :commands="commands" @run="handleRun"></CommandRun>
-    </div>
-    <div>
-      <ConsoleLog :logs="logs"></ConsoleLog>
+    <h1 class="page-title">List of Available Commands</h1>
+    <div class="table-container">
+      <Table :commands="commands"></Table>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
-import CommandRun from '../components/DropDown/CommandRun.vue'
-import ConsoleLog from '../components/Tables/ConsoleLog.vue'
-
-import { Command, Log } from '../types/types';
-
-const logs = ref<Log[]>([]);
-
-function handleRun(command: Command) {
-  console.log(`run command: ${command}`)
-  const newLog: Log = { title: command.title, message: "fewf", success: true }
-  logs.value.push(newLog)
-}
-
-
+import Table from '../components/Tables/RefSheetTable.vue';
+import { Command } from '../types/types';
 
 const commands: Command[] = [
   {
@@ -109,17 +93,11 @@ const commands: Command[] = [
     code: 'openSettings()',
   },
 ];
-
 </script>
+
 <style scoped>
-.center-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 30vh;
-  /* Full viewport height */
-  text-align: center;
+.table-container {
+  padding: 0 5rem;
+  /* Adds padding on the left and right */
 }
 </style>
-

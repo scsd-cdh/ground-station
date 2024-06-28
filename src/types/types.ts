@@ -4,3 +4,13 @@ export interface Section {
   link: string;
   icon: string;
 }
+export interface Command {
+  title: string;
+  desc: string;
+  code: string;
+}
+export interface Log {
+  title: string;
+  message: string;
+  success: boolean;
+}
